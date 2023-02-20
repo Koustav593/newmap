@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map Find</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Shantell+Sans:wght@500&display=swap');
+        *{
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            font-family: 'Shantell Sans', cursive;
+        }
+        .header{
+            min-height:40vh;
+            width:100vw;
+            background-color: purple;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .box{
+            width:35%;
+            padding:10px;
+            height:100%;
+            background-color:rgb(73, 0, 73);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        form{
+            height:90%;
+            width:50%;
+            /* background-color: bisque; */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        form input{
+            width:100%;
+            height:35px;
+            padding:10px;
+        }
+        label{
+            margin-top:5px;
+            margin-bottom: 5px;
+            color:white;
+            font-weight:bold;
+        }
+        button{
+            background-color: rgb(188, 100, 12);
+            color:white;
+            outline:none;
+            padding:10px 20px;
+            font-size:16px;
+            margin-top: 5px;
+        }
+        @media(max-width:700px){
+            .box{
+            width:60%;
+            }
+        }
+        @media(max-width:500px){
+            .box{
+            width:90%;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+</head>
+<body>
+    <div class="header">
+        <div class="box">
+ <form action="/show" method="post">
+         <label>Starting Point</label>
+        <input type="text" required name="latitude1" id="latitude1" placeholder="latitude">
+        <input type="text" required name="longitude1" id="longitude1" placeholder="longitude">
+        <label>Ending Point</label>
+        <input type="text" required name="latitude2" id="latitude2" placeholder="latitude">
+        <input type="text" required name="longitude2" id="longitude2" placeholder="longitude">
+        <button type="submit">Find Route</button>
+    </form>
+</div>
+    </div>
+   
+    <div id="map" style="min-height:60vh;width:100vw"></div>
+<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+<script src="/index.js"></script>
+</body>
+</html>
